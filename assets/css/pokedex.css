@@ -1,0 +1,81 @@
+
+.pokemons{
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.pokemon{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 0.5rem;
+    background: #1cca8d;
+    color: white;
+    border-radius: 1.2rem;
+}
+
+
+.pokemon .number{
+    text-align: right;
+    color: black;
+    opacity: 0.4;
+}
+.pokemon .types{    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+.pokemon .types li{    
+    padding:.3rem .3rem;
+    background-color: rgba(127, 255, 212, 0.501);
+    border-radius: 2rem;
+    margin:0.3rem 1rem 0.3rem 0;
+    font-size: .725rem;
+    text-align: center;
+}
+.pokemon .detail img{
+    max-width: 100%;
+    max-height: 5rem;
+    align-self: flex-end;
+}
+.pokemon .detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.pokemon .name{
+   font-size: large;
+   margin-bottom: 0.6rem;
+}
+@media screen and (min-width: 992px){
+    .content{
+        max-width: 992px;
+        margin: 0 auto;
+    }
+    
+}
+
+
+@media screen and (max-width: 380px){
+    .pokemons{
+        grid-template-columns:  1fr;
+    }
+}
+
+@media screen and (min-width: 780px){
+    .pokemons{
+        grid-template-columns:  repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .pokemons{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
