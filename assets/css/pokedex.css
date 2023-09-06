@@ -124,6 +124,41 @@
    font-size: large;
    margin-bottom: 0.6rem;
 }
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+#LoadMoreButton{
+    background-color: #77c850;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10%;
+}
+
+#LoadMoreButton:hover{
+    background-color: #ff0000;
+    color: black;
+    border-color:#77c850 ;
+}
+
+#LoadLessButton{
+    background-color: #ff0000;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 10%;
+}
+
+#LoadLessButton:hover{
+    background-color: #77c850;
+    color: black;
+    border-color:#77c850 ;
+}
 @media screen and (min-width: 992px){
     .content{
         max-width: 992px;
