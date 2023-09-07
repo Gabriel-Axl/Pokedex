@@ -22,7 +22,6 @@ function covertPokemonToLi(pokemon){
     `
 }
 
-
 function loadMorePokemon(offset, limit){
     pokeApi.getPokemons(offset, limit).then((pokemonList = []) => {
         pokemonOl.innerHTML = pokemonList.map(covertPokemonToLi).join('')
@@ -33,7 +32,7 @@ loadMorePokemon(offset , limit);
 
 LoadMoreButton.addEventListener('click', () =>{
     offset += 16;
-    limit += 16;
+    
     loadMorePokemon(offset, limit)
     LoadLessButton.removeAttribute('disabled', true)
     Title.scrollIntoView({ behavior: 'auto' });
@@ -42,7 +41,6 @@ LoadMoreButton.addEventListener('click', () =>{
 LoadLessButton.addEventListener('click', () =>{
     if(offset != 0){
         offset -= 16;
-        limit -= 16;
         loadMorePokemon(offset, limit)
         Title.scrollIntoView({ behavior: 'auto' });
     }
