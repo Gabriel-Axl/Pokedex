@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const Title = document.getElementById('detailCard');
     let limit = 16;
     let offset = 0;
+    let openModal = null;
   
     function covertPokemonToLi(pokemon) {
       return `
@@ -34,23 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
                       <li>
                           <h3 class="label">HP</h3>
                           <h3>${pokemon.hp}</h3>
-                      </li>
-                      <hr>
+                      </li>                     
                       <li>
                           <h3 class="label">ATTACK</h3>
                           <h3>${pokemon.attack}</h3>
-                      </li>
-                      <hr>
+                      </li>                   
                       <li>
                           <h3 class="label">DEFENSE</h3>
                           <h3>${pokemon.defense}</h3>
-                      </li>
-                      <hr>
+                      </li>                   
                       <li>
                           <h3 class="label">SPEED</h3>
                           <h3>${pokemon.speed}</h3>
-                      </li>
-                      <hr>
+                      </li>                      
                       <li>
                           <h3 class="label">HEIGHT</h3>
                           <h3>${pokemon.height}</h3>
@@ -79,32 +76,32 @@ document.addEventListener('DOMContentLoaded', () => {
     
       if (pokemonElement) {
         const number = parseInt(pokemonElement.classList[2]);
-        
+        if(openModal){
+          openModal.remove()
+        }
         ePokemon(number).then((pokemon) =>  {
+
           const modalContent = detailModal(pokemon);
     
           const div = document.createElement('div');
           div.innerHTML = modalContent;
-    
+          div.id = "divPokeDetail"
           const btnClose = div.querySelector('#btnClose');
           const modalPoke = div.querySelector('#pokeDetail');
     
           btnClose.addEventListener('click', () => {
             console.log('ref')
             modalPoke.close();
+            div.remove();
           });
     
           detailCard.appendChild(div);
-          Title.scrollIntoView({ behavior: 'auto' });
+          Title.scrollIntoView({ behavior: 'smooth' });
+          openModal = div;
         });
+
       }
     });
-   
-    
-    
-    
-    
-    
     
     LoadMoreButton.addEventListener('click', () => {
       offset += 16;

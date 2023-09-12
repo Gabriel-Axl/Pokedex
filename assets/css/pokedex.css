@@ -165,19 +165,44 @@
 }
 
 #pokeDetail{
+    position: absolute;
+    top:10rem;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-content: center;
+    width: 20rem;
+    height: 30rem;
     z-index: 10;
+    border-radius: 10%;
+    border-style: outset;
+    border-color: red;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
 }
 
 .attributs{
     padding: 0;
 }
+
 .detailImg{
-    width: 15rem;
+    max-width: 90%;
+    max-height: 10rem;
+    align-items: center;
+    
+}
+
+.imgDetail{
+    display: flex;
+    justify-content: center;
+    
 }
 .attributs li{
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    padding: 5px 0 5px 0;
 }
 .attributs li .label{
     text-align: justify;
@@ -186,11 +211,23 @@
     text-align: center;
     margin: 0;
 }
+
+h3{
+    padding-left: 30px;
+    text-align: end;
+}
+
 #btnClose{
+    align-self: flex-end;
+    padding: 2px;
+    border-radius: 15px;
+    width: 2rem;
     cursor: pointer;
     background-color: rgb(255, 0, 0);
 }
+
 #pokeModalName{
+    margin: 0;
     text-align: center;
     font-weight: 700;
 }
