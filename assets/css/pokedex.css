@@ -86,6 +86,7 @@
     margin: 0.5rem;
     color: white;
     border-radius: 1.2rem;
+    cursor: pointer;
 }
 
 
@@ -159,6 +160,41 @@
     color: black;
     border-color:#77c850 ;
 }
+#pokeBlock{
+    cursor: pointer;
+}
+
+#pokeDetail{
+    z-index: 10;
+}
+
+.attributs{
+    padding: 0;
+}
+.detailImg{
+    width: 15rem;
+}
+.attributs li{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.attributs li .label{
+    text-align: justify;
+}
+.attributs li h3{
+    text-align: center;
+    margin: 0;
+}
+#btnClose{
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+}
+#pokeModalName{
+    text-align: center;
+    font-weight: 700;
+}
+
 @media screen and (min-width: 992px){
     .content{
         max-width: 992px;
